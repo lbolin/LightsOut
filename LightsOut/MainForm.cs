@@ -12,10 +12,11 @@ namespace LightsOut
 {
     public partial class MainForm : Form
     {
+        private LightsOutGame game;
         private const int GridOffset = 50; // Distance from upper-left side of window
         private const int GridLength = 200; // Size in pixels of grid
-        private const int CellLength = GridLength / GridLength;
-        private LightsOutGame game;
+        //private const int CellLength = GridLength / game.GridSize;
+     
      
        // public event EventHandler ResizeEnd;
 
@@ -32,6 +33,8 @@ namespace LightsOut
         private void MainForm_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
+            int CellLength = GridLength / game.GridSize;
+
             for (int r = 0; r < game.GridSize; r++)
             {
                 for (int c = 0; c < game.GridSize; c++)
@@ -62,6 +65,8 @@ namespace LightsOut
 
         private void MainForm_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
         {
+            int CellLength = GridLength / game.GridSize;
+
             // Make sure click was inside the grid
             if (e.X < GridOffset || e.X > CellLength * game.GridSize+ GridOffset ||
             e.Y < GridOffset || e.Y > CellLength * game.GridSize + GridOffset)
