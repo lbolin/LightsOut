@@ -94,27 +94,26 @@ namespace LightsOut
             Invalidate();
         }
 
-        //private void newGameButton_Click(object sender, EventArgs e)
-        //{
-        //    // Fill grid with either white or black
-        //    for (int r = 0; r < NumCells; r++)
-        //        for (int c = 0; c < NumCells; c++)
-        //            grid[r, c] = rand.Next(2) == 1;
-        //    // Redraw grid
-        //    this.Invalidate();
-        //}
+       private void newGameButton_Click(object sender, EventArgs e)
+        {
+            Fill grid with either white or black
+            for (int r = 0; r < NumCells; r++)
+                for (int c = 0; c < NumCells; c++)
+                    grid[r, c] = rand.Next(2) == 1;
+            // Redraw grid
+            this.Invalidate();
 
-
+        }
 
         private void exitButton_Click_1(object sender, EventArgs e)
         {
             Close();
         }
 
-        //private void newToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    newGameButton_Click(sender, e);
-        //}
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            newGameButton_Click(sender, e);
+        }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
