@@ -74,6 +74,7 @@ namespace LightsOut
             // Find row, col of mouse press
             int r = (e.Y - GridOffset) / CellLength;
             int c = (e.X - GridOffset) / CellLength;
+            game.Move(r, c);
 
  
             // Redraw grid
@@ -95,22 +96,19 @@ namespace LightsOut
         }
 
        private void newGameButton_Click(object sender, EventArgs e)
-        {
-            Fill grid with either white or black
-            for (int r = 0; r < NumCells; r++)
-                for (int c = 0; c < NumCells; c++)
-                    grid[r, c] = rand.Next(2) == 1;
-            // Redraw grid
-            this.Invalidate();
+       {
+            game.NewGame();
+           this.Invalidate();
 
-        }
+
+       }
 
         private void exitButton_Click_1(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+       private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
             newGameButton_Click(sender, e);
         }

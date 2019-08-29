@@ -78,7 +78,8 @@
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.Size = new System.Drawing.Size(324, 38);
             this.newToolStripMenuItem.Text = "&New";
-          
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.newGameButton_Click);
+            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
@@ -110,6 +111,7 @@
             this.newGameButton.TabIndex = 2;
             this.newGameButton.Text = "New Game";
             this.newGameButton.UseVisualStyleBackColor = true;
+            this.newGameButton.Click += new System.EventHandler(this.newGameButton_Click);
             // 
             // exitButton
             // 
